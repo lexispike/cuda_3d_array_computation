@@ -1,0 +1,53 @@
+
+Alyxandra Spikerman
+Written for a course at Northeastern University: High Performance Computing
+
+
+------------------------------------------------------------
+
+
+Both programs carry out a 'nearest neighbor' or 'stencil' computation on a 3D array b. Array b is initialized with random integers (1-50) and copied to the GPU for computation. Array a stores the computation of b's values and is copied back to the host.
+
+The non-tiled version of the program does the computation as given. The tiled version breaks the array into blocks for computation.
+
+
+------------------------------------------------------------
+
+
+Q1_nontiled.cu
+
+--HOW TO COMPILE--
+nvcc -arch=sm_35 -O3 Q1_nontiled.cu -o Q1_nontiled
+
+OR
+
+make Q1_nontiled
+
+--HOW TO RUN--
+
+make run_nontiled
+
+OR
+
+sbatch nontiled_batch.bash
+
+
+------------------------------------------------------------
+
+
+Q1_tiled.cu
+
+--HOW TO COMPILE--
+nvcc -arch=sm_35 -O3 Q1_tiled.cu -o Q1_tiled
+
+OR
+
+make Q1_tiled
+
+--HOW TO RUN--
+
+make run_tiled
+
+OR
+
+sbatch tiled_batch.bash
